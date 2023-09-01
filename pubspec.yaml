@@ -1,6 +1,6 @@
 name: win32_browser_detect
 description: This package detects the Windows default browser and returns the path to the exe.
-version: 0.1.3
+version: 0.1.4
 homepage: https://www.jhanley.com
 repository: https://github.com/jhanley-com/win32_browser_detect
 
@@ -9,8 +9,6 @@ environment:
 
 platforms:
   windows:
-
-publish_to:
 
 # Add regular dependencies here.
 dependencies:

@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Updated project to improve pub.dev validation score.
+
 ## 0.1.3
 
 - Updated project to improve pub.dev validation score.
