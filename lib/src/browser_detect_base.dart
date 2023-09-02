@@ -1,6 +1,14 @@
 import 'dart:io';
 import 'package:win32_registry/win32_registry.dart';
 
+/// This class represents an installed browser
+class Browser {
+  String keyName = '';		// Windows registry key name
+  String applicationName = '';	// Application name
+  String command = '';		// Exe path
+}
+
+/// This class supports detecting installed and default browsers
 class BrowserDetect {
   RegistryKey? _openRegistry(RegistryHive hive, String keyName) {
     try {
@@ -10,6 +18,58 @@ class BrowserDetect {
     }
   }
 
+  /// Return List<Browser> for each installed browser
+  List<Browser> getInstalledBrowsers() {
+    List<Browser> browsers = [];
+    RegistryKey? key;
+
+    String keyName = r"SOFTWARE\Clients\StartMenuInternet";
+
+    key = _openRegistry(RegistryHive.localMachine, keyName);
+
+    if (key == null) {
+      return browsers;
+    }
+
+    for (var subkey in key.subkeyNames) {
+      Browser browser = Browser();
+
+      // Save the registry key name
+      browser.keyName = subkey;
+
+      // Get the browser application name
+      String keyName2 = keyName + r"\" + subkey + r"\Capabilities";
+
+      var key2 = _openRegistry(RegistryHive.localMachine, keyName2);
+
+      if (key2 != null) {
+        String? applicationName = key2.getValueAsString('ApplicationName');
+
+        if (applicationName != null) {
+          browser.applicationName = applicationName;
+        }
+      }
+
+      // Get the browser command (exe)
+      String keyName3 = keyName + r"\" + subkey + r"\shell\open\command";
+
+      var key3 = _openRegistry(RegistryHive.localMachine, keyName3);
+
+      if (key3 != null) {
+        String? command = key3.getValueAsString('');
+
+        if (command != null) {
+          browser.command = command.replaceAll('"', '');	// Remove string quotes
+        }
+      }
+
+      browsers.add(browser);
+   }
+
+   return browsers;
+  }
+
+  /// Return the default browser registry entry name
   String getDefaultBrowser() {
     String keyName = '';
     String? progId;
@@ -37,6 +97,7 @@ class BrowserDetect {
     return progId;
   }
 
+  /// Return the default browser exe path
   String getDefaultBrowserPath() {
     String keyName = '';
     String? progId;

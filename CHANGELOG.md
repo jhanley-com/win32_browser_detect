@@ -1,3 +1,7 @@
+## 0.2.0
+
+- Added getInstalledBrowsers().
+
 ## 0.1.4
 
 - Updated project to improve pub.dev validation score.
