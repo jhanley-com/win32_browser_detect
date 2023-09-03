@@ -1,3 +1,10 @@
+## 0.2.1
+
+- Added API documentation
+- Refactored code
+- Improved getInstalledBrowsers() to detect the application name for Internet Explorer
+- Improved getInstalledBrowsers() to detect browsers installed per user
+
 ## 0.2.0
 
 - Added getInstalledBrowsers().

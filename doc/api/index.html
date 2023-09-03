@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 7.0.0-dev">
+  <meta name="description" content="win32_browser_detect API docs, for the Dart programming language.">
+  <title>win32_browser_detect - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://www.jhanley.com">win32_browser_detect package</a></li>
+  </ol>
+  <div class="self-name">win32_browser_detect</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="browser-detect">Browser Detect</h1>
+<h2 id="features">Features</h2>
+<p>This package detects the Windows default browser and returns the path to the exe.</p>
+<p>This package is for Windows only.</p>
+<h2 id="getting-started">Getting started</h2>
+<h2 id="usage">Usage</h2>
+<pre class="language-dart"><code>import 'package:win32_browser_detect/win32_browser_detect.dart';
+
+void main() {
+  print("Default Browser:");
+  var detect = BrowserDetect();
+  print("Browser: ${detect.getDefaultBrowser()}");
+  print("Path: ${detect.getDefaultBrowserPath()}");
+
+  print("");
+  print("Installed Browsers:");
+  List&lt;Browser&gt; browsers = detect.getInstalledBrowsers();
+  for (var browser in browsers) {
+    print("hive: ${browser.hive}");
+    print("keyName: ${browser.keyName}");
+    print("applicationName: ${browser.applicationName}");
+    print("command: ${browser.command}");
+    print("");
+  });
+}
+</code></pre>
+<h2 id="additional-information">Additional information</h2>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="win32_browser_detect">
+  <span class="name"><a href="win32_browser_detect/win32_browser_detect-library.html">win32_browser_detect</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="https://www.jhanley.com">win32_browser_detect package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">win32_browser_detect</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="win32_browser_detect/win32_browser_detect-library.html">win32_browser_detect</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    win32_browser_detect
+      0.2.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

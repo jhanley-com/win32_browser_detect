@@ -23,6 +23,7 @@ void main() {
   print("Installed Browsers:");
   List<Browser> browsers = detect.getInstalledBrowsers();
   for (var browser in browsers) {
+    print("hive: ${browser.hive}");
     print("keyName: ${browser.keyName}");
     print("applicationName: ${browser.applicationName}");
     print("command: ${browser.command}");
